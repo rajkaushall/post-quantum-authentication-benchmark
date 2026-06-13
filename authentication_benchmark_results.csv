@@ -1,0 +1,4 @@
+Algorithm,Message Generation Time (seconds),Decode/Verify Time (seconds),Total Authentication Time (seconds),Public Key Size (bytes),Private/Secret Key Size (bytes),Signature/Ticket Size (bytes),Quantum Safe
+Kerberos/KDC,0.00017690333382536967,5.968333959269027e-05,0.00014844666972445945,0,0,725,No
+RSA-3072,0.0018764566571917384,6.267332937568427e-05,0.001792816660599783,422,1794,384,No
+ML-DSA-65,0.03927630333928391,0.00853301999741234,0.04985959332358713,1952,4032,3309,Yes

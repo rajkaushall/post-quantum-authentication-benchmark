@@ -1,0 +1,18 @@
+CRYSTALS-Dilithium, standardized by NIST as ML-DSA, is a post-quantum digital signature algorithm designed to protect digital systems from both classical and future quantum-computer attacks. 
+Unlike encryption algorithms, Dilithium does not hide data; instead, it proves that a message was created by an authorized sender and that the message was not modified during transmission. 
+In this implementation, ML-DSA-65 is used because it provides a balanced security level suitable for academic demonstration.
+The implementation follows three main operations: key generation, signing, and verification. During key generation, the algorithm creates a public key and a secret key. 
+The secret key is kept private by the sender and is used to generate signatures, while the public key is shared with receivers for verification. 
+During signing, the sender takes a message, such as a VM live migration request, and generates a digital signature using the secret key. 
+During verification, the receiver checks the signature using the public key. If the message is original, verification returns true;
+ if the message is modified, verification returns false.
+In a secure VM live migration system, this mechanism can protect migration commands, metadata, and control messages. 
+For example, when Host-A sends a request to migrate VM-102 to Host-B, the request can be signed using ML-DSA. 
+Host-B verifies the signature before accepting the migration. If an attacker changes the destination host or VM ID, the signature becomes invalid. 
+This helps prevent unauthorized migration, tampering, spoofing, and man-in-the-middle attacks.
+The Python implementation uses the dilithium-py educational library to demonstrate the complete workflow. 
+The program first generates the public and secret keys, then signs a sample VM migration message, verifies the signature, and finally performs a tampering test by changing the message. 
+The original message successfully verifies, while the tampered message fails verification. This proves that ML-DSA can provide authentication and integrity in cloud migration security.
+However, this educational implementation should not be used directly in production systems because real cryptographic deployments require constant-time implementations, 
+secure key storage, side-channel resistance, proper randomness, and standardized library support. 
+For real-world use, a validated and maintained cryptographic library should be used.
