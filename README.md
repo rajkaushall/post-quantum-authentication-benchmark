@@ -227,6 +227,6 @@ For future cloud systems, secure VM migration, distributed authentication, and l
 
 ## Author
 
-**RajKa**
+**RajKaushal**
 
 This project was prepared as an academic and technical demonstration of post-quantum authentication benchmarking.
